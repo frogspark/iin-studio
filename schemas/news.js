@@ -1,13 +1,12 @@
 import slugify from '../utils/slugify'
 
 export default {
-  title: "Work",
-  name: 'work',
+  title: "News",
+  name: 'news',
   type: "document",
   fields: [
     {
       title: "Title",
-      description: "The name of this release",
       name: "title",
       type: "string",
       validation: Rule => Rule.required()
@@ -49,8 +48,6 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'campaignTitle',
-      media: 'teaserImage'
     }
   }
 }

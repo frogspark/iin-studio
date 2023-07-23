@@ -1,6 +1,6 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Whats On',
+  name: 'whatsOn',
   type: 'document',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
@@ -9,13 +9,6 @@ export default {
       name: 'title',
       type: 'string',
       validation: Rule => Rule.required()
-    },
-    {
-      title: 'Hero Video',
-      name: 'heroVideo',
-      description: 'The raw Vimeo URL for the video that will play in the hero when clicked',
-      type: 'url',
-      // validation: Rule => Rule.required()
     },
     {
       title: 'SEO / Share Settings',

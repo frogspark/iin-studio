@@ -9,6 +9,7 @@ import {
   FiTarget,
   FiPhone,
   FiFileText,
+  FiTag,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -41,7 +42,17 @@ export default () =>
       S.divider(),
       S.listItem().title("What's On").child(S.editor().id('whatsOn').schemaType('whatsOn').documentId('singleton-whatsOn').views(getPreview('whatsOn'))).icon(FiCalendar),
       S.divider(),
-      S.listItem().title('Latest News').child(S.documentTypeList('news')).icon(FiSun),
+      S.listItem()
+        .title('Latest News')
+        .child(
+          S.list()
+            .title('Latest News')
+            .items([
+              S.listItem().title('Articles').child(S.documentTypeList('news')).icon(FiSun),
+              S.divider(),
+              S.listItem().title('Categories').child(S.documentTypeList('categories')).icon(FiTag),
+            ]),
+        ),
       S.divider(),
       S.listItem().title('About').child(S.editor().id('about').schemaType('about').documentId('singleton-about').views(getPreview('about'))).icon(FiTarget),
       S.divider(),

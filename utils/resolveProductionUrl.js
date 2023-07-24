@@ -3,7 +3,7 @@ const globalSlugs = {
   home: '/',
   news: '/news',
   whatsOn: '/whats-on',
-  about: '/about',
+  about: '/about-us',
   contact: '/contact'
 }
 
@@ -22,7 +22,7 @@ export const createUrl = ({ slug, globalSlug }) => {
   }
   let path = `${globalSlug}`
   if (slug) path += `/${slug.current}`
-  return `${previewURL}/api/preview?secret=${secret}&slug=${path}`
+  return `${previewURL}/api/preview?secret=skDppZHbaNOnOuUuohT2emGuj4Eodhdv4tUnbMGSwUqE0aHQ1OepqE8hJkzyx1I2EswZqJ1EMMUNdFa3CiDCxfJu3ZxLS9Ipv4FXJ6ShQGzaepEUWXm9ne5FCQFeMrwTT9DwFqi4fCVLBbOBKEjy5o5lrd49hcnBU42HfIIpD7yR0QUznDtC&slug=${path}`
 }
 
 export default function resolveProductionUrl (document) {

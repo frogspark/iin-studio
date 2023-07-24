@@ -1,3 +1,4 @@
+import { FiImage, FiUser } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -9,6 +10,54 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Category",
+      name: "category",
+      type: "reference",
+      to: [{type: 'categories'}],
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Post Date",
+      name: "postDate",
+      type: "date",
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        calendarTodayLabel: 'Today'
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Teaser Image",
+      name: "teaserImage",
+      type: "defaultImage",
+      description: "The image used as a teaser for this article when it's in the main news grid",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Hero Image",
+      name: "heroImage",
+      type: "defaultImage",
+      description: "The (ideally landscape) image used as a hero within this article",
+    },
+    {
+      title: "Intro Text",
+      name: "introText",
+      type: "text",
+      rows: 4,
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Content', 
+      name: 'content',
+      type: 'array', 
+      of: [
+        {type: 'block'},
+        {type: 'blockQuote', name: 'Quote', icon: FiUser },
+        {type: 'inlineImage', name: 'Image', icon: FiImage}
+      ],
       validation: Rule => Rule.required()
     },
     {
@@ -45,9 +94,27 @@ export default {
       type: 'seo'
     }
   ],
+  orderings: [
+    {
+      title: 'Post Date',
+      name: 'postDateDesc',
+      by: [
+        {field: 'postDate', direction: 'desc'}
+      ]
+    }
+  ],
   preview: {
     select: {
       title: 'title',
+      image: 'teaserImage',
+      postDate: 'postDate'
+    },
+    prepare ({ title, postDate, image }) {
+      return {
+        title: title,
+        subtitle: postDate,
+        media: image
+      }
     }
   }
 }

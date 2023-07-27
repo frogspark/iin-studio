@@ -6,6 +6,7 @@ import singletonHome from './singletonHome'
 import singletonAbout from './singletonAbout'
 import singletonWhatsOn from './singletonWhatsOn'
 import singletonContact from './singletonContact'
+import singletonGlobalOptions from './singletonGlobalOptions'
 
 // Documents
 import news from './news'
@@ -27,6 +28,7 @@ export default createSchema({
     singletonContact,
     singletonAbout,
     singletonWhatsOn,
+    singletonGlobalOptions,
     news,
     categories,
     policies,

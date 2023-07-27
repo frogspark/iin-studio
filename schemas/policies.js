@@ -12,6 +12,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: "Content",
+      name: "content",
+      type: 'array', 
+      of: [{type: 'block'}],
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',

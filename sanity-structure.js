@@ -10,6 +10,7 @@ import {
   FiPhone,
   FiFileText,
   FiTag,
+  FiSettings,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -59,4 +60,6 @@ export default () =>
       S.listItem().title('Contact').child(S.editor().id('contact').schemaType('contact').documentId('singleton-contact').views(getPreview('contact'))).icon(FiPhone),
       S.divider(),
       S.listItem().title('Policies').child(S.documentTypeList('policies')).icon(FiFileText),
+      S.divider(),
+      S.listItem().title('Global Options').child(S.editor().id('global').schemaType('global').documentId('singleton-global')).icon(FiSettings),
     ]);

@@ -11,6 +11,7 @@ export default {
         decorators: [
           {title: 'Italic', value: 'em'},
           {title: 'Bold', value: 'strong'},
+          {title: 'Display Font', value: 'strike-through' }
         ],
         annotations: []
       }

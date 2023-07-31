@@ -3,7 +3,7 @@ const globalSlugs = {
   home: '/',
   news: '/news',
   whatsOn: '/whats-on',
-  about: '/about-us',
+  about: '/about',
   contact: '/contact'
 }
 

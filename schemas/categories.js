@@ -12,6 +12,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: "Hero Text",
+      name: "heroText",
+      type: "contentSimple",
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',

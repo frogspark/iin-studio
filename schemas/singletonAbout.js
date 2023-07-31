@@ -64,6 +64,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Second Section Button Link',
+      name: 'secondSectionButtonLink',
+      type: 'reference',
+      to: [{type: 'news'}]
+    },
+    {
       title: 'Second Section Image',
       name: 'secondSectionImage',
       type: 'defaultImage',
@@ -140,6 +146,12 @@ export default {
       ],
     },
     {
+      title: 'Crime Reduction Button Link',
+      name: 'crimeReductionButtonLink',
+      type: 'reference',
+      to: [{type: 'news'}]
+    },
+    {
       title: 'Our People Section Heading',
       name: 'ourPeopleSectionHeading',
       type: 'contentSimple',
@@ -183,7 +195,8 @@ export default {
           name: "resource",
           fields: [
             { type: "string", name: "title", validation: Rule => Rule.required()},
-            { type: "file", name: "file", validation: Rule => Rule.required()},
+            { type: "file", name: "file"},
+            { type: "url", name: "link"},
           ]
         }
       ],

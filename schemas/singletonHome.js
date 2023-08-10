@@ -11,16 +11,23 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Hero Video (Desktop Aspect)',
-      name: 'heroVideo',
+      title: 'Hero Video Full',
+      name: 'heroVideoFull',
       description: 'The raw Vimeo URL for the video that will play in the hero when clicked',
       type: 'url',
       validation: Rule => Rule.required()
     },
     {
-      title: 'Hero Video (Mobile Aspect)',
+      title: 'Hero Video Looper (Desktop Aspect)',
+      name: 'heroVideo',
+      description: 'The raw Vimeo URL for the video that will loop in the background of the hero',
+      type: 'url',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Hero Video Looper (Mobile Aspect)',
       name: 'heroVideoMobile',
-      description: 'The raw Vimeo URL for the video that will play in the hero when clicked',
+      description: 'The raw Vimeo URL for the video that will loop in the background of the hero',
       type: 'url',
       // validation: Rule => Rule.required()
     },

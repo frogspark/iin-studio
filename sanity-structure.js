@@ -11,6 +11,8 @@ import {
   FiFileText,
   FiTag,
   FiSettings,
+  FiArchive,
+  FiZap,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -49,6 +51,8 @@ export default () =>
           S.list()
             .title('Latest News')
             .items([
+              S.listItem().title("News Landing").child(S.editor().id('newsLanding').schemaType('newsLanding').documentId('singleton-newsLanding').views(getPreview('newsLanding'))).icon(FiArchive),
+              S.divider(),
               S.listItem().title('Articles').child(S.documentTypeList('news')).icon(FiSun),
               S.divider(),
               S.listItem().title('Categories').child(S.documentTypeList('categories')).icon(FiTag),
@@ -62,4 +66,6 @@ export default () =>
       S.listItem().title('Policies').child(S.documentTypeList('policies')).icon(FiFileText),
       S.divider(),
       S.listItem().title('Global Options').child(S.editor().id('global').schemaType('global').documentId('singleton-global')).icon(FiSettings),
+      S.divider(),
+      S.listItem().title('Redirects').child(S.documentTypeList('redirect').title('Redirects')).icon(FiZap),
     ]);

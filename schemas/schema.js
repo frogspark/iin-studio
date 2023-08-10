@@ -19,6 +19,8 @@ import blockQuote from './common/blockQuote'
 import defaultImage from './common/defaultImage'
 import policies from './policies'
 import categories from './categories'
+import singletonNewsLanding from './singletonNewsLanding'
+import redirects from './redirects'
 
 export default createSchema({
   name: 'default',
@@ -28,10 +30,12 @@ export default createSchema({
     singletonContact,
     singletonAbout,
     singletonWhatsOn,
+    singletonNewsLanding,
     singletonGlobalOptions,
     news,
     categories,
     policies,
+    redirects,
     defaultImage,
     blockQuote,
     inlineImage,

@@ -30,6 +30,12 @@ export default {
       name: 'shareGraphic',
       type: 'image',
       description: 'Share graphics will be cropped to 1200x630'
+    },
+    {
+      title: 'JSON LD',
+      name: 'jsonLd',
+      type: 'text',
+      description: 'Optionally embed JSON LD into this page/article'
     }
   ]
 }

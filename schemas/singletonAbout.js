@@ -168,11 +168,7 @@ export default {
       name: 'ourPeopleSectionBoardOfDirectorsLink',
       type: 'url',
     },
-    {
-      title: 'Our People Section The IIN Team Link',
-      name: 'ourPeopleSectionTheIinTeamLink',
-      type: 'url',
-    },
+    
     {
       title: 'Our People Section Image',
       name: 'ourPeopleSectionImage',

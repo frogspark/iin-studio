@@ -18,6 +18,12 @@ export default {
       description: 'Optional supporting caption',
       name: 'caption',
       type: 'string'
-    }
+    },
+    {
+      title: 'Vimeo Video (Optional)',
+      description: 'Optionally add a vimeo URL to override this image',
+      name: 'vimeoVideo',
+      type: 'url'
+    },
   ]
 }

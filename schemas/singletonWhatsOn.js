@@ -13,6 +13,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Mobile Hero Image',
+      name: 'mobileHeroImage',
+      type: 'defaultImage'
+    },
+    {
       title: 'Intro Text',
       name: 'introText',
       type: 'contentSimple',

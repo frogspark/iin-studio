@@ -13,6 +13,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: "Order Rank",
+      name: "orderRank",
+      type: "string",
+      hidden: true,
+    },
+    {
       title: "Category",
       name: "category",
       type: "reference",

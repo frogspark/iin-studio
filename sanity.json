@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "shiftwalk-sanity-starter"
+    "name": "It's in Nottingham"
   },
   "plugins": [
     "@sanity/base",

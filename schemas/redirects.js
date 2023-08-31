@@ -20,4 +20,15 @@ export default {
       initialValue: () => true,
     },
   ],
+  preview: {
+    select: {
+      source: 'source',
+      destination: 'destination',
+    },
+    prepare ({ source, destination }) {
+      return {
+        title: source
+      }
+    }
+  }
 };

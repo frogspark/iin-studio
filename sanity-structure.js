@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import IframePreview from './preview/IFramePreview'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
+import { createSuperPane } from 'sanity-super-pane';
 
 import {
   FiHome,
@@ -73,5 +74,6 @@ export default () =>
       S.divider(),
       S.listItem().title('Global Options').child(S.editor().id('global').schemaType('global').documentId('singleton-global')).icon(FiSettings),
       S.divider(),
-      S.listItem().title('Redirects').child(S.documentTypeList('redirect').title('Redirects')).icon(FiZap),
+      S.listItem().title('Redirects').child(createSuperPane('redirect', S)).title('Redirects').icon(FiZap),
+
     ]);

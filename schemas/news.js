@@ -1,4 +1,4 @@
-import { FiImage, FiUser } from 'react-icons/fi'
+import { FiCode, FiImage, FiUser } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
@@ -104,6 +104,7 @@ export default {
             }
           ]
         }},
+        {type: 'embed', name: 'Embed', icon: FiCode },
         {type: 'blockQuote', name: 'Quote', icon: FiUser },
         {type: 'inlineImage', name: 'Image', icon: FiImage}
         

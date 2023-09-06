@@ -15,6 +15,7 @@ import news from './news'
 import seo from './common/seo'
 import contentSimple from './common/contentSimple'
 import inlineImage from './common/inlineImage'
+import embed from './common/embed'
 import blockQuote from './common/blockQuote'
 import defaultImage from './common/defaultImage'
 import policies from './policies'
@@ -37,6 +38,7 @@ export default createSchema({
     policies,
     redirects,
     defaultImage,
+    embed,
     blockQuote,
     inlineImage,
     contentSimple,

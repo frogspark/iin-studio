@@ -1,4 +1,6 @@
 import { FiCode, FiImage, FiUser } from 'react-icons/fi'
+import { LuMail } from "react-icons/lu";
+import { MdLink } from "react-icons/md";
 import slugify from '../utils/slugify'
 
 export default {
@@ -81,6 +83,7 @@ export default {
             },
             {
               name: 'internalLink',
+              icon: MdLink,
               type: 'object',
               title: 'Internal link',
               fields: [
@@ -99,6 +102,19 @@ export default {
                     {type: 'whatsOn'},
                     // other types you may want to link to
                   ]
+                }
+              ]
+            },
+            {
+              name: 'mailToLink',
+              type: 'object',
+              title :'Mailto Link',
+              icon: LuMail,
+              fields: [
+                {
+                  name: 'email',
+                  type: 'email',
+                  title: 'Email'
                 }
               ]
             }

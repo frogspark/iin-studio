@@ -128,6 +128,18 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Related News Posts',
+      name: 'customRelated',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type : 'news' }]
+        }
+      ],
+      validation: Rule => Rule.max(3)
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',

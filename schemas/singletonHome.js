@@ -117,6 +117,18 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Latest News Posts',
+      name: 'latestNewsPosts',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type : 'news' }]
+        }
+      ],
+      validation: Rule => Rule.max(6)
+    },
+    {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo'

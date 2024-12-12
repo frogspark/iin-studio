@@ -129,7 +129,6 @@ export default {
       validation: Rule => Rule.max(6)
     },
     {
-    {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo'

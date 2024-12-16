@@ -1,3 +1,5 @@
+import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
+
 export default {
   title: 'Content Simple',
   name: 'contentSimple',
@@ -13,7 +15,23 @@ export default {
           {title: 'Bold', value: 'strong'},
           {title: 'Display Font', value: 'strike-through' }
         ],
-        annotations: []
+        annotations: [
+          {
+            name: 'link',
+            type: 'object',
+            title: 'Link',
+            fields: [
+              {
+                name: 'url',
+                title: 'URL',
+                type: 'url'
+              }
+            ],
+            components: {
+              annotation: ExternalLinkRenderer
+            }
+          },
+        ]
       }
     }
   ]

@@ -22,9 +22,15 @@ export default {
             title: 'Link',
             fields: [
               {
-                name: 'url',
+                name: 'href',
                 title: 'URL',
                 type: 'url'
+              },
+              {
+                name: 'blank',
+                title: "Open in new tab?",
+                type: "boolean",
+                initialValue: false
               }
             ],
             components: {

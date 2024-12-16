@@ -4,8 +4,8 @@ import { LaunchIcon } from '@sanity/icons'
 
 const ExternalLinkRenderer = props => (
     <span>
-    {props.renderDefault(props)}
-        <a contentEditable={false} href={props.value.href}>
+      {props.renderDefault(props)}
+      <a contentEditable={false} href={props.value.href}>
       <LaunchIcon />
     </a>
   </span>

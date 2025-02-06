@@ -48,6 +48,30 @@ export default () =>
       S.listItem().title("What's On").child(S.editor().id('whatsOn').schemaType('whatsOn').documentId('singleton-whatsOn').views(getPreview('whatsOn'))).icon(FiCalendar),
       S.divider(),
       S.listItem()
+      .title('Events & Offers')
+      .child(
+        S.list()
+          .title('Events & Offers')
+          .items([
+            S.listItem().title("Create Event").child(S.editor().id('events').schemaType('events').documentId('singleton-events').views(getPreview('events'))).icon(FiArchive),
+            orderableDocumentListDeskItem({
+              type: 'events',
+              title: 'Events',
+              icon: FiSun
+            }),   
+
+            S.divider(),
+            S.listItem().title("Create Offer").child(S.editor().id('offer').schemaType('offers').documentId('singleton-offers').views(getPreview('offer'))).icon(FiArchive),
+            orderableDocumentListDeskItem({
+              type: 'offers',
+              title: 'Offers',
+              icon: FiSun
+            }),   
+         
+       
+          ]),
+      ),      S.divider(),
+      S.listItem()
         .title('Latest News')
         .child(
           S.list()

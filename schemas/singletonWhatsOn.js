@@ -61,6 +61,67 @@ export default {
       validation: Rule => Rule.required().min(3).max(3)
     },
     {
+      title: 'offer slider',
+      name: 'offerslider',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          name: "initiative",
+          fields: [
+            { type: "string", name: "title", validation: Rule => Rule.required()},
+            { type: "text", name: "address"},
+            { type: "defaultImage", name: "teaserImage" },
+            { type: "text", name: "excerpt", rows: 4 },
+   
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              media: 'teaserImage',
+            },
+            prepare ({ title, media }) {
+              return {
+                title,
+                media
+              }
+            }
+          }
+        }
+      ],
+    },
+    {
+      title: 'event slider',
+      name: 'eventslider',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          name: "initiative",
+          fields: [
+            { type: "string", name: "title", validation: Rule => Rule.required()},
+            { type: 'date', name: 'dateValue', title: 'Date'},
+            { type: "defaultImage", name: "teaserImage" },
+            { type: "text", name: "excerpt", rows: 4 },
+            { type: "text", name: "address"},
+            { type: "number", name: "price"},
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              media: 'teaserImage',
+            },
+            prepare ({ title, media }) {
+              return {
+                title,
+                media
+              }
+            }
+          }
+        }
+      ],
+    },
+    {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo'

@@ -24,12 +24,7 @@ export default {
       type: 'defaultImage',
       validation: Rule => Rule.required()
     },
-    {
-      title: 'Hero Image',
-      name: 'heroImage',
-      type: 'defaultImage',
-      validation: Rule => Rule.required()
-    },
+
     {
       title: 'Address',
       name: 'address',

@@ -1,4 +1,5 @@
 import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
+import { LuMail } from "react-icons/lu";
 
 export default {
   title: 'Content Simple',
@@ -37,6 +38,19 @@ export default {
               annotation: ExternalLinkRenderer
             }
           },
+          {
+            name: 'mailToLink',
+            type: 'object',
+            title :'Mailto Link',
+            icon: LuMail,
+            fields: [
+              {
+                name: 'email',
+                type: 'email',
+                title: 'Email'
+              }
+            ]
+          }
         ]
       }
     }

@@ -24,14 +24,23 @@ export default {
               {
                 name: "href",
                 title: "URL",
-                type: "url",
+                type: "string", // Change to string if you want anchor IDs (e.g., "#section")
+                validation: (Rule) => Rule.required(),
               },
             ],
           },
           {
             name: "anchorId",
             title: "Anchor ID",
-            type: "string",
+            type: "object",
+            fields: [
+              {
+                name: "anchorId", // Match with serializer naming
+                title: "Anchor ID",
+                type: "string",
+                validation: (Rule) => Rule.required(),
+              },
+            ],
             description: "Add a unique ID for internal linking.",
           },
           {

@@ -1,5 +1,6 @@
 import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
-
+import { FaAnchor } from "react-icons/fa";
+import { FaAnchorLock } from "react-icons/fa6";
 export default {
   title: 'Content Simple',
   name: 'contentSimple',
@@ -18,6 +19,7 @@ export default {
         annotations: [
           {
             name: "anchorLink",
+            icon: FaAnchor,
             title: "Anchor Link",
             type: "object",
             fields: [
@@ -31,6 +33,7 @@ export default {
           },
           {
             name: "anchorId",
+            icon: FaAnchorLock,
             title: "Anchor ID",
             type: "object",
             fields: [

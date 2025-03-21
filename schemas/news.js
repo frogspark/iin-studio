@@ -1,6 +1,9 @@
 import { FiCode, FiImage, FiUser } from 'react-icons/fi'
 import { LuMail } from "react-icons/lu";
 import { MdLink } from "react-icons/md";
+import { FaAnchor } from "react-icons/fa";
+import { FaAnchorLock } from "react-icons/fa6";
+
 import slugify from '../utils/slugify'
 
 export default {
@@ -64,6 +67,35 @@ export default {
       of: [
         {type: 'block', marks: {
           annotations: [
+            {
+              name: "anchorLink",
+              icon: FaAnchor,
+              title: "Anchor Link",
+              type: "object",
+              fields: [
+                {
+                  name: "href",
+                  title: "URL",
+                  type: "string", // Change to string if you want anchor IDs (e.g., "#section")
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              name: "anchorId",
+              icon: FaAnchorLock,
+              title: "Anchor ID",
+              type: "object",
+              fields: [
+                {
+                  name: "anchorId", // Match with serializer naming
+                  title: "Anchor ID",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+              description: "Add a unique ID for internal linking.",
+            },
             {
               name: 'link',
               type: 'object',

@@ -10,6 +10,13 @@ export default {
       type: 'block',
       lists: [],
       styles: [],
+      fields: [
+        {
+          name: "anchorId",
+          title: "Anchor ID",
+          type: "string",
+          description: "Add a unique ID for internal linking.",
+        },],
       marks: {
         decorators: [
           {title: 'Italic', value: 'em'},
@@ -17,6 +24,18 @@ export default {
           {title: 'Display Font', value: 'strike-through' }
         ],
         annotations: [
+          {
+            name: "anchorLink",
+            title: "Anchor Link",
+            type: "object",
+            fields: [
+              {
+                name: "href",
+                title: "URL",
+                type: "url",
+              },
+            ],
+          },
           {
             name: 'link',
             type: 'object',

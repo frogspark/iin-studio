@@ -1,5 +1,4 @@
 import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
-import { LuMail } from "react-icons/lu";
 
 export default {
   title: 'Content Simple',
@@ -10,13 +9,6 @@ export default {
       type: 'block',
       lists: [],
       styles: [],
-      fields: [
-        {
-          name: "anchorId",
-          title: "Anchor ID",
-          type: "string",
-          description: "Add a unique ID for internal linking.",
-        },],
       marks: {
         decorators: [
           {title: 'Italic', value: 'em'},
@@ -35,6 +27,12 @@ export default {
                 type: "url",
               },
             ],
+          },
+          {
+            name: "anchorId",
+            title: "Anchor ID",
+            type: "string",
+            description: "Add a unique ID for internal linking.",
           },
           {
             name: 'link',
@@ -57,19 +55,6 @@ export default {
               annotation: ExternalLinkRenderer
             }
           },
-          {
-            name: 'mailToLink',
-            type: 'object',
-            title :'Mailto Link',
-            icon: LuMail,
-            fields: [
-              {
-                name: 'email',
-                type: 'email',
-                title: 'Email'
-              }
-            ]
-          }
         ]
       }
     }

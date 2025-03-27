@@ -1,6 +1,8 @@
 import { FiSmile } from "react-icons/fi"
 import { FaAnchor } from "react-icons/fa";
 import { FaAnchorLock } from "react-icons/fa6";
+import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
+
 export default {
   title: 'Contact',
   name: 'contact',

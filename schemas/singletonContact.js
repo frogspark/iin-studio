@@ -1,6 +1,7 @@
 import { FiSmile } from "react-icons/fi"
 import { FaAnchor } from "react-icons/fa";
 import { FaAnchorLock } from "react-icons/fa6";
+import ExternalLinkRenderer from "./components/ExternalLiukRenderer";
 
 export default {
   title: 'Contact',
@@ -60,7 +61,27 @@ export default {
               ],
               description: "Add a unique ID for internal linking.",
             },
-   
+            {
+              name: 'link',
+              type: 'object',
+              title: 'Link',
+              fields: [
+                {
+                  name: 'href',
+                  title: 'URL',
+                  type: 'url'
+                },
+                {
+                  name: 'blank',
+                  title: "Open in new tab?",
+                  type: "boolean",
+                  initialValue: false
+                }
+              ],
+              components: {
+                annotation: ExternalLinkRenderer
+              }
+            },
           ]
         }
       }]

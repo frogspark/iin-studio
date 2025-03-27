@@ -1,8 +1,7 @@
 import slugify from '../utils/slugify'
 import { FaAnchor } from "react-icons/fa";
 import { FaAnchorLock } from "react-icons/fa6";
-import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
-
+import ExternalLinkRenderer from "./components/ExternalLiukRenderer";
 export default {
   title: "Policies",
   name: 'policies',
@@ -54,7 +53,27 @@ export default {
             ],
             description: "Add a unique ID for internal linking.",
           },
-
+          {
+            name: 'link',
+            type: 'object',
+            title: 'Link',
+            fields: [
+              {
+                name: 'href',
+                title: 'URL',
+                type: 'url'
+              },
+              {
+                name: 'blank',
+                title: "Open in new tab?",
+                type: "boolean",
+                initialValue: false
+              }
+            ],
+            components: {
+              annotation: ExternalLinkRenderer
+            }
+          },
         ]
       }}],
     },

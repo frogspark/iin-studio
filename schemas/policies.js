@@ -54,27 +54,7 @@ export default {
             ],
             description: "Add a unique ID for internal linking.",
           },
-          {
-            name: 'link',
-            type: 'object',
-            title: 'Link',
-            fields: [
-              {
-                name: 'href',
-                title: 'URL',
-                type: 'url'
-              },
-              {
-                name: 'blank',
-                title: "Open in new tab?",
-                type: "boolean",
-                initialValue: false
-              }
-            ],
-            components: {
-              annotation: ExternalLinkRenderer
-            }
-          },
+
         ]
       }}],
     },

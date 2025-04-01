@@ -62,7 +62,11 @@ export default () =>
               }),
               // S.listItem().title('Articles').child(S.documentTypeList('news')).icon(FiSun),
               S.divider(),
-              S.listItem().title('Categories').child(S.documentTypeList('categories')).icon(FiTag),
+              orderableDocumentListDeskItem({
+                type: 'categories',
+                title: 'Categories',
+                icon: FiSun
+              }),
             ]),
         ),
       S.divider(),
@@ -76,3 +80,5 @@ export default () =>
       S.divider(),
       S.listItem().title('Redirects').child(S.documentTypeList('redirect').title('Redirects')).icon(FiZap),
     ]);
+
+// S.listItem().title('Categories').child(S.documentTypeList('categories')).icon(FiTag),

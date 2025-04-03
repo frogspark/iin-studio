@@ -1,6 +1,6 @@
 import ExternalLinkRenderer from "../components/ExternalLiukRenderer";
-import { LuMail } from "react-icons/lu";
-
+import { FaAnchor } from "react-icons/fa";
+import { FaAnchorLock } from "react-icons/fa6";
 export default {
   title: 'Content Simple',
   name: 'contentSimple',
@@ -17,6 +17,35 @@ export default {
           {title: 'Display Font', value: 'strike-through' }
         ],
         annotations: [
+          {
+            name: "anchorLink",
+            icon: FaAnchor,
+            title: "Anchor Link",
+            type: "object",
+            fields: [
+              {
+                name: "href",
+                title: "URL",
+                type: "string", // Change to string if you want anchor IDs (e.g., "#section")
+                validation: (Rule) => Rule.required(),
+              },
+            ],
+          },
+          {
+            name: "anchorId",
+            icon: FaAnchorLock,
+            title: "Anchor ID",
+            type: "object",
+            fields: [
+              {
+                name: "anchorId", // Match with serializer naming
+                title: "Anchor ID",
+                type: "string",
+                validation: (Rule) => Rule.required(),
+              },
+            ],
+            description: "Add a unique ID for internal linking.",
+          },
           {
             name: 'link',
             type: 'object',
@@ -38,19 +67,6 @@ export default {
               annotation: ExternalLinkRenderer
             }
           },
-          {
-            name: 'mailToLink',
-            type: 'object',
-            title :'Mailto Link',
-            icon: LuMail,
-            fields: [
-              {
-                name: 'email',
-                type: 'email',
-                title: 'Email'
-              }
-            ]
-          }
         ]
       }
     }

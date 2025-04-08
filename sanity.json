@@ -2,7 +2,7 @@
   "root": true,
   "api": {
     "projectId": "qjsm7swb",
-    "dataset": "staging"
+    "dataset": "production"
   },
   "project": {
     "name": "It's in Nottingham"

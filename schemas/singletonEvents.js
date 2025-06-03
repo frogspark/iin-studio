@@ -56,7 +56,8 @@ export default {
     {
       title: "Intro Text",
       name: "introText",
-      type: "contentSimple",
+      type: "text",
+      rows: 4,
       description: "This should be a short description of the event.",
     },
     {

@@ -34,7 +34,8 @@ export default {
     {
       title: "Intro Text",
       name: "introText",
-      type: "contentSimple",
+      type: "text",
+      rows: 4
     },
     {
       title: "Content",

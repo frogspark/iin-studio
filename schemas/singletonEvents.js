@@ -1,6 +1,5 @@
 import { FiImage } from "react-icons/fi";
 import slugify from "../utils/slugify";
-
 export default {
   title: "Events",
   name: "events",

@@ -9,7 +9,7 @@ export default {
   fields: [
     {
       title: "Title",
-      name: "title",
+      name: "EventName",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
@@ -40,7 +40,7 @@ export default {
     },
     {
       title: "Mobile Hero Image",
-      name: "mobileHeroImage",
+      name: "imageUrl",
       type: "defaultImage",
       validation: (Rule) => Rule.required(),
     },
@@ -53,13 +53,13 @@ export default {
     },
     {
       title: "Main content",
-      name: "content",
+      name: "description",
       type: "contentSimple",
       description: "This should be the main article for the event.",
     },
     {
       title: "Address",
-      name: "address",
+      name: "venueAddress",
       type: "string",
       description: "Add the address for this event",
       validation: (Rule) => Rule.required(),
@@ -90,70 +90,13 @@ export default {
     },
     {
       title: "Ticket URL",
-      name: "ticketUrl",
+      name: "url",
       type: "string",
       description: "Add the ticket URL",
       validation: (Rule) => Rule.required(),
     },
 
-    // ⬇️ Synced Fields (added below)
 
-    {
-      title: "External ID",
-      name: "externalId",
-      type: "string",
-      description: "ID from the external sync source",
-    },
-    {
-      title: "Event Start",
-      name: "start",
-      type: "datetime",
-    },
-    {
-      title: "Event End",
-      name: "end",
-      type: "datetime",
-    },
-    {
-      title: "Venue Name",
-      name: "location",
-      type: "string",
-    },
-    {
-      title: "Venue Address",
-      name: "venueAddress",
-      type: "string",
-    },
-    {
-      title: "Latitude",
-      name: "latitude",
-      type: "number",
-    },
-    {
-      title: "Longitude",
-      name: "longitude",
-      type: "number",
-    },
-    {
-      title: "Category",
-      name: "category",
-      type: "string",
-    },
-    {
-      title: "Event Page URL",
-      name: "url",
-      type: "url",
-    },
-    {
-      title: "External Website",
-      name: "website",
-      type: "url",
-    },
-    {
-      title: "Image URL (Synced)",
-      name: "imageUrl",
-      type: "url",
-    },
 
     // ⬇️ SEO Settings
     {

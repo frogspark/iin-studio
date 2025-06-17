@@ -38,7 +38,6 @@ export default createSchema({
     singletonNewsLanding,
     singletonGlobalOptions,
     news,
-    syncEvents,
     categories,
     policies,
     redirects,

@@ -119,6 +119,14 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
+        .title('Synced Events')
+        .schemaType('syncEvent')
+        .child(
+          S.documentTypeList('syncEvent')
+            .title('Synced Events')          
+          ),
+      S.divider(),
+      S.listItem()
         .title("About")
         .child(
           S.editor()

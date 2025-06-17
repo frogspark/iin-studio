@@ -1,5 +1,6 @@
 import { FiImage } from "react-icons/fi";
 import slugify from "../utils/slugify";
+
 export default {
   title: "Events",
   name: "events",
@@ -8,7 +9,7 @@ export default {
   fields: [
     {
       title: "Title",
-      name: "EventName",
+      name: "title",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
@@ -39,7 +40,7 @@ export default {
     },
     {
       title: "Mobile Hero Image",
-      name: "imageUrl",
+      name: "mobileHeroImage",
       type: "defaultImage",
       validation: (Rule) => Rule.required(),
     },
@@ -52,13 +53,13 @@ export default {
     },
     {
       title: "Main content",
-      name: "description",
+      name: "content",
       type: "contentSimple",
       description: "This should be the main article for the event.",
     },
     {
       title: "Address",
-      name: "venueAddress",
+      name: "address",
       type: "string",
       description: "Add the address for this event",
       validation: (Rule) => Rule.required(),
@@ -89,13 +90,70 @@ export default {
     },
     {
       title: "Ticket URL",
-      name: "url",
+      name: "ticketUrl",
       type: "string",
       description: "Add the ticket URL",
       validation: (Rule) => Rule.required(),
     },
 
+    // ⬇️ Synced Fields (added below)
 
+    {
+      title: "External ID",
+      name: "externalId",
+      type: "string",
+      description: "ID from the external sync source",
+    },
+    {
+      title: "Event Start",
+      name: "start",
+      type: "datetime",
+    },
+    {
+      title: "Event End",
+      name: "end",
+      type: "datetime",
+    },
+    {
+      title: "Venue Name",
+      name: "location",
+      type: "string",
+    },
+    {
+      title: "Venue Address",
+      name: "venueAddress",
+      type: "string",
+    },
+    {
+      title: "Latitude",
+      name: "latitude",
+      type: "number",
+    },
+    {
+      title: "Longitude",
+      name: "longitude",
+      type: "number",
+    },
+    {
+      title: "Category",
+      name: "category",
+      type: "string",
+    },
+    {
+      title: "Event Page URL",
+      name: "url",
+      type: "url",
+    },
+    {
+      title: "External Website",
+      name: "website",
+      type: "url",
+    },
+    {
+      title: "Image URL (Synced)",
+      name: "imageUrl",
+      type: "url",
+    },
 
     // ⬇️ SEO Settings
     {

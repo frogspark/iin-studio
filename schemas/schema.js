@@ -9,7 +9,7 @@ import singletonEvents from './singletonEvents'
 import singletonOffers from './singletonOffers'
 import singletonContact from './singletonContact'
 import singletonGlobalOptions from './singletonGlobalOptions'
-import singletonSyncedEvents from './singletonSyncEvents'
+
 // Documents
 import news from './news'
 
@@ -24,6 +24,7 @@ import policies from './policies'
 import categories from './categories'
 import singletonNewsLanding from './singletonNewsLanding'
 import redirects from './redirects'
+import syncEvent from './syncEvent'
 export default createSchema({
   name: 'default',
   
@@ -36,8 +37,8 @@ export default createSchema({
     singletonOffers,
     singletonNewsLanding,
     singletonGlobalOptions,
-    singletonSyncedEvents,
     news,
+    syncEvent,
     categories,
     policies,
     redirects,

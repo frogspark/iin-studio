@@ -1,5 +1,5 @@
 export default {
-    name: 'singletonSyncedEvents',
+    name: 'syncEvents',
     title: 'Synced Event',
     type: 'document',
     fields: [

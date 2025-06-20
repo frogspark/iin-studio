@@ -24,7 +24,7 @@ import policies from './policies'
 import categories from './categories'
 import singletonNewsLanding from './singletonNewsLanding'
 import redirects from './redirects'
-import syncEvent from './syncEvent'
+import syncEvents from './singletonSyncEvents'
 export default createSchema({
   name: 'default',
   
@@ -38,7 +38,7 @@ export default createSchema({
     singletonNewsLanding,
     singletonGlobalOptions,
     news,
-    syncEvent,
+    syncEvents,
     categories,
     policies,
     redirects,

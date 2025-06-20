@@ -97,62 +97,11 @@ export default {
     },
 
     // ⬇️ Synced Fields (added below)
-
     {
       title: "External ID",
       name: "externalId",
       type: "string",
       description: "ID from the external sync source",
-    },
-    {
-      title: "Event Start",
-      name: "start",
-      type: "datetime",
-    },
-    {
-      title: "Event End",
-      name: "end",
-      type: "datetime",
-    },
-    {
-      title: "Venue Name",
-      name: "location",
-      type: "string",
-    },
-    {
-      title: "Venue Address",
-      name: "venueAddress",
-      type: "string",
-    },
-    {
-      title: "Latitude",
-      name: "latitude",
-      type: "number",
-    },
-    {
-      title: "Longitude",
-      name: "longitude",
-      type: "number",
-    },
-    {
-      title: "Category",
-      name: "category",
-      type: "string",
-    },
-    {
-      title: "Event Page URL",
-      name: "url",
-      type: "url",
-    },
-    {
-      title: "External Website",
-      name: "website",
-      type: "url",
-    },
-    {
-      title: "Image URL (Synced)",
-      name: "imageUrl",
-      type: "url",
     },
 
     // ⬇️ SEO Settings

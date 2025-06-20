@@ -1,5 +1,5 @@
 export default {
-    name: 'syncEvent',
+    name: 'syncEvents',
     title: 'Synced Event',
     type: 'document',
     fields: [
@@ -21,7 +21,12 @@ export default {
             type: "defaultImage",
             validation: (Rule) => Rule.required(),
           },
-      
+              {
+          title: "External ID",
+          name: "externalId",
+          type: "string",
+          description: "ID from the external sync source",
+        },
           {
             title: "Address",
             name: "address",

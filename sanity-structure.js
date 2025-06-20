@@ -84,12 +84,6 @@ export default () =>
                 title: "Offers",
                 icon: FiSun,
               }),
-              S.divider(),
-              orderableDocumentListDeskItem({
-                type: "syncedEvents",
-                title: "Synced Events",
-                icon: FiSun,
-              }),
             ])
         ),
       S.divider(),

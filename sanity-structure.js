@@ -86,7 +86,7 @@ export default () =>
               }),
               S.divider(),
               orderableDocumentListDeskItem({
-                type: "syncedEvents",
+                type: "singletonSyncedEvents",
                 title: "Synced Events",
                 icon: FiSun,
               }),

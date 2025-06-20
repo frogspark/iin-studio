@@ -66,26 +66,36 @@ export default () =>
         )
         .icon(FiCalendar),
       S.divider(),
-      S.listItem()
-        .title("Events & Offers")
-        .child(
-          S.list()
-            .title("Events & Offers")
-            .items([
-              orderableDocumentListDeskItem({
-                type: "events",
-                title: "Events",
-                icon: FiSun,
-              }),
+S.listItem()
+  .title("Events & Offers")
+  .child(
+    S.list()
+      .title("Events & Offers")
+      .items([
+        orderableDocumentListDeskItem({
+          type: "events",
+          title: "Events",
+          icon: FiSun,
+        }),
 
-              S.divider(),
-              orderableDocumentListDeskItem({
-                type: "offers",
-                title: "Offers",
-                icon: FiSun,
-              }),
-            ])
-        ),
+        S.divider(),
+        orderableDocumentListDeskItem({
+          type: "offers",
+          title: "Offers",
+          icon: FiSun,
+        }),
+
+        S.divider(),
+        S.listItem()
+          .title('Synced Events')
+          .schemaType('syncEvent')
+          .child(
+            S.documentTypeList('syncEvent')
+              .title('Synced Events')
+          )
+      ])
+  ),
+
       S.divider(),
       S.listItem()
         .title("Latest News")
@@ -118,14 +128,14 @@ export default () =>
             ])
         ),
       S.divider(),
-      S.listItem()
-        .title('Synced Events')
-        .schemaType('syncEvent')
-        .child(
-          S.documentTypeList('syncEvent')
-            .title('Synced Events')          
-          ),
-      S.divider(),
+      // S.listItem()
+      //   .title('Synced Events')
+      //   .schemaType('syncEvent')
+      //   .child(
+      //     S.documentTypeList('syncEvent')
+      //       .title('Synced Events')          
+      //     ),
+      // S.divider(),
       S.listItem()
         .title("About")
         .child(

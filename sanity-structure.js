@@ -124,7 +124,14 @@ export default () =>
             ])
         ),
       S.divider(),
-
+      S.listItem()
+        .title('Synced Events')
+        .schemaType('singletonSyncedEvents')
+        .child(
+          S.documentTypeList('singletonSyncedEvents')
+            .title('Synced Events')          
+          ),
+      S.divider(),
       S.listItem()
         .title("About")
         .child(

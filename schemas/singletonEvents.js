@@ -82,6 +82,13 @@ export default {
       description: "Date & Time of the event.",
       validation: (Rule) => Rule.required(),
     },
+        {
+      title: "Button Text",
+      name: "buttonText",
+      type: "string",
+      description: "type the text for the button that links to the ticket URL",
+      validation: (Rule) => Rule.required(),
+    },
     {
       title: "Ticket URL",
       name: "ticketUrl",

@@ -68,12 +68,6 @@ export default {
             description: "This should be the main article for the event.",
           },
           {
-            title: "Price",
-            name: "price",
-            type: "number",
-            description: "Price listed for the event",
-          },
-          {
             title: "Ticket URL",
             name: "ticketUrl",
             type: "string",

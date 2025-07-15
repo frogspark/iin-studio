@@ -43,6 +43,14 @@ export default {
       type: "contentSimple",
     },
     {
+      title: "Show on website",
+      name: "showOnWebsite",
+      type: "boolean",
+      description: "Check this box to make this event visible on the live website.",
+      // Sets the default value to "checked" for new events
+      initialValue: true,
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",

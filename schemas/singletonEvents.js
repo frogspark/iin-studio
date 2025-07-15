@@ -83,19 +83,20 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Price",
-      name: "price",
-      type: "number",
-      description: "Price listed for the event",
-    },
-    {
       title: "Ticket URL",
       name: "ticketUrl",
       type: "string",
       description: "Add the ticket URL",
       validation: (Rule) => Rule.required(),
     },
-
+   {
+      title: "Show on website",
+      name: "showOnWebsite",
+      type: "boolean",
+      description: "Check this box to make this event visible on the live website.",
+      // Sets the default value to "checked" for new events
+      initialValue: true,
+    },
     // ⬇️ Synced Fields (added below)
     {
       title: "External ID",

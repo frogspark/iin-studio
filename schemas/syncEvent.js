@@ -21,6 +21,12 @@ export default {
             type: "defaultImage",
             validation: (Rule) => Rule.required(),
           },
+          {
+          title: "Featured Image",
+          name: "featuredImage",
+          type: "string",
+          description: "Default image for this event",
+          },
               {
           title: "External ID",
           name: "externalId",
@@ -68,11 +74,25 @@ export default {
             description: "This should be the main article for the event.",
           },
           {
+            title: "Show on carousel",
+            name: "showOnWebsite",
+            type: "boolean",
+            description: "Check this box to make this event visible on the events carousel.",
+            // Sets the default value to "checked" for new events
+            initialValue: true,
+          },
+         {
+            title: "Button Text",
+            name: "buttonText",
+            type: "string",
+            description: "type the text for the button that links to the ticket URL",
+            validation: (Rule) => Rule.required(),
+          },
+          {
             title: "Ticket URL",
             name: "ticketUrl",
             type: "string",
             description: "Add the ticket URL",
-      
             validation: (Rule) => Rule.required(),
           },
           {

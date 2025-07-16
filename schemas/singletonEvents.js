@@ -97,10 +97,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
    {
-      title: "Show on website",
+      title: "Show on carousel",
       name: "showOnWebsite",
       type: "boolean",
-      description: "Check this box to make this event visible on the live website.",
+      description: "Check this box to make this event visible on the events carousel.",
       // Sets the default value to "checked" for new events
       initialValue: true,
     },

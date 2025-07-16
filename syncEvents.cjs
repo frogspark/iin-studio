@@ -26,8 +26,10 @@ async function fetchAndSaveEvents() {
         description: event.description,
         start: event.start,
         end: event.end,
-        location: event.venue?.name || '',
+        location: event.venue.name || '',
         externalId: event.id.toString(),
+        featuredImage: event.featured_image,
+
       };
 
       await sanity.createOrReplace(doc);

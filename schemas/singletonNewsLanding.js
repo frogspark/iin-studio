@@ -1,5 +1,5 @@
 export default {
-  title: 'News Landing --',
+  title: 'News Landing',
   name: 'newsLanding',
   type: 'document',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],

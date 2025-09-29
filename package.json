@@ -10,8 +10,9 @@
     "start": "sanity start",
     "build": "sanity build public -y",
     "sync:events": "node syncEvents.cjs",
-    "delete:events": "node delete-syncEvents.js"
-
+    "sync:events:enhanced": "node syncEventsEnhanced.cjs",
+    "delete:events": "node delete-syncEvents.js",
+    "test:events": "node testEventSync.cjs"
   },
   "keywords": [
     "sanity"

@@ -124,6 +124,13 @@ export default {
       type: "string",
       description: "ID from the external sync source",
     },
+    {
+      title: "Deleted",
+      name: "deleted",
+      type: "boolean",
+      description: "Mark this event as deleted. Deleted events won't appear on the website.",
+      initialValue: false,
+    },
 
     // ⬇️ SEO Settings
     {

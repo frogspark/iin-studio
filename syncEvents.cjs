@@ -1,8 +1,8 @@
 require('dotenv').config();
 const axios = require('axios');
-const { createClient } = require('@sanity/client');
+const sanityClient = require('@sanity/client');
 
-const sanity = createClient({
+const sanity = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: process.env.SANITY_DATASET,
   token: process.env.SANITY_TOKEN,

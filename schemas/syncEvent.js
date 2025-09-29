@@ -36,6 +36,25 @@ export default {
             description: "ID from the external sync source",
           },
           {
+            title: "Deleted",
+            name: "deleted",
+            type: "boolean",
+            description: "Mark this event as deleted from the external source (Loqiva). Deleted events won't appear on the website.",
+            initialValue: false,
+          },
+          {
+            title: "Recurring Event ID",
+            name: "recurringEventId",
+            type: "string",
+            description: "ID of the parent recurring event series (if this is part of a recurring series)",
+          },
+          {
+            title: "Event Instance ID",
+            name: "eventInstanceId",
+            type: "string",
+            description: "Unique ID for this specific instance within a recurring series",
+          },
+          {
             title: "Address",
             name: "address",
             type: "string",

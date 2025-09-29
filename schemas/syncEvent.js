@@ -123,7 +123,19 @@ export default {
               maxLength: 96,
               slugify: (input) => slugify(`${input}`),
             },
-            validation: (Rule) => Rule.required(),
+            validation: (Rule) => Rule.required().custom(async (slug, context) => {
+              const {document, getClient} = context
+              const client = getClient({apiVersion: '2021-03-25'})
+              const id = document._id.replace(/^drafts\./, '')
+              const params = {
+                draft: `drafts.${id}`,
+                published: id,
+                slug: slug?.current
+              }
+              const query = `*[_type == "syncEvent" && slug.current == $slug && !(_id in [$draft, $published])]`
+              const result = await client.fetch(query, params)
+              return result.length > 0 ? 'This slug is already in use' : true
+            }),
           },
           {
             title: "SEO / Share Settings",

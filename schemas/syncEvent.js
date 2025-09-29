@@ -1,3 +1,5 @@
+import slugify from '../utils/slugify'
+
 export default {
     name: 'syncEvent',
     title: 'Synced Event',

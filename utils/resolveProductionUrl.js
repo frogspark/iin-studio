@@ -4,7 +4,9 @@ const globalSlugs = {
   news: '/news',
   whatsOn: '/whats-on',
   about: '/about',
-  contact: '/contact'
+  contact: '/contact',
+  offers: '/offers',
+  events: '/events'
 }
 
 const secret = process.env.SANITY_STUDIO_SANITY_PREVIEW_SECRET

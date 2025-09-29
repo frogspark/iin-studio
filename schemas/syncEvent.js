@@ -87,8 +87,8 @@ export default {
             title: "Button Text",
             name: "buttonText",
             type: "string",
-            description: "type the text for the button that links to the ticket URL",
-            validation: (Rule) => Rule.required(),
+            description: "type the text for the button that links to the ticket URL (defaults to 'View in app' if left empty)",
+            initialValue: "View in app",
           },
           {
             title: "Ticket URL",

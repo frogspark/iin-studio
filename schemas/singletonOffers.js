@@ -1,4 +1,5 @@
 import { FiImage } from "react-icons/fi";
+import client from 'part:@sanity/base/client'
 import slugify from "../utils/slugify";
 
 export default {
@@ -78,13 +79,13 @@ export default {
         slugify: (input) => slugify(`${input}`),
       },
       validation: (Rule) => Rule.required().custom(async (slug, context) => {
-        const {document, getClient} = context
-        const client = getClient({apiVersion: '2021-03-25'})
+        if (!slug?.current) return true
+        const {document} = context
         const id = document._id.replace(/^drafts\./, '')
         const params = {
           draft: `drafts.${id}`,
           published: id,
-          slug: slug?.current
+          slug: slug.current
         }
         const query = `*[_type == "offers" && slug.current == $slug && !(_id in [$draft, $published])]`
         const result = await client.fetch(query, params)

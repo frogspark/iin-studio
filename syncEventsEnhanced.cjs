@@ -79,19 +79,21 @@ function generateSlug(title) {
 
 async function handleSingleEvent(apiEvent) {
   const eventData = {
-    externalId: apiEvent.id.toString(),
-    title: apiEvent.name || 'Untitled Event',
-    description: apiEvent.description || '',
-    start: apiEvent.start,
-    end: apiEvent.end,
-    address: apiEvent.venue?.name || apiEvent.location || '',
+    externalId: apiEvent.Id || apiEvent.id?.toString() || '',
+    title: apiEvent.EventName || apiEvent.name || 'Untitled Event',
+    description: apiEvent.EventDescription || apiEvent.description || '',
+    start: apiEvent.EventStartDate || apiEvent.start,
+    end: apiEvent.EventEndDate || apiEvent.end,
+    address: apiEvent.VenueAddress || apiEvent.venue?.name || apiEvent.location || '',
     featuredImage: apiEvent.featured_image || '',
+    largeImage: apiEvent.LargeImage || '',
     slug: {
-      current: generateSlug(apiEvent.name || 'untitled-event'),
+      current: generateSlug(apiEvent.EventName || apiEvent.name || 'untitled-event'),
       _type: 'slug'
     },
     // Add any other fields that come from the API
     ...(apiEvent.age_limit && { age: apiEvent.age_limit }),
+    ...(apiEvent.EventWebsite && { ticketUrl: apiEvent.EventWebsite }),
     ...(apiEvent.ticket_url && { ticketUrl: apiEvent.ticket_url }),
     buttonText: apiEvent.button_text || 'View in app',
   };
@@ -101,7 +103,7 @@ async function handleSingleEvent(apiEvent) {
 
 async function handleRecurringEvent(apiEvent) {
   const results = [];
-  const recurringEventId = apiEvent.id.toString();
+  const recurringEventId = apiEvent.Id || apiEvent.id?.toString() || '';
 
   // If the API provides individual instances in an array
   if (apiEvent.instances && Array.isArray(apiEvent.instances)) {
@@ -110,19 +112,21 @@ async function handleRecurringEvent(apiEvent) {
         externalId: instance.id ? instance.id.toString() : `${recurringEventId}-${instance.start}`,
         eventInstanceId: instance.id ? instance.id.toString() : `${recurringEventId}-${instance.start}`,
         recurringEventId: recurringEventId,
-        title: apiEvent.name || 'Untitled Event',
-        description: apiEvent.description || '',
+        title: apiEvent.EventName || apiEvent.name || 'Untitled Event',
+        description: apiEvent.EventDescription || apiEvent.description || '',
         start: instance.start,
         end: instance.end,
-        address: apiEvent.venue?.name || apiEvent.location || '',
+        address: apiEvent.VenueAddress || apiEvent.venue?.name || apiEvent.location || '',
         featuredImage: apiEvent.featured_image || '',
+        largeImage: apiEvent.LargeImage || '',
         slug: {
-          current: generateSlug(`${apiEvent.name || 'untitled-event'}-${instance.start}`),
+          current: generateSlug(`${apiEvent.EventName || apiEvent.name || 'untitled-event'}-${instance.start}`),
           _type: 'slug'
         },
         ...(apiEvent.age_limit && { age: apiEvent.age_limit }),
+        ...(apiEvent.EventWebsite && { ticketUrl: apiEvent.EventWebsite }),
         ...(apiEvent.ticket_url && { ticketUrl: apiEvent.ticket_url }),
-        buttonText: apiEvent.button_text || 'View in app',
+        buttonText: apiEvent.button_text || 'Book Now',
       };
 
       const result = await createOrUpdateEvent(eventData);
@@ -132,22 +136,24 @@ async function handleRecurringEvent(apiEvent) {
     // If it's a single recurring event without individual instances
     // Treat it as a single event but mark it as part of a recurring series
     const eventData = {
-      externalId: apiEvent.id.toString(),
+      externalId: apiEvent.Id || apiEvent.id?.toString() || '',
       recurringEventId: recurringEventId,
-      eventInstanceId: apiEvent.id.toString(),
-      title: apiEvent.name || 'Untitled Event',
-      description: apiEvent.description || '',
-      start: apiEvent.start,
-      end: apiEvent.end,
-      address: apiEvent.venue?.name || apiEvent.location || '',
+      eventInstanceId: apiEvent.Id || apiEvent.id?.toString() || '',
+      title: apiEvent.EventName || apiEvent.name || 'Untitled Event',
+      description: apiEvent.EventDescription || apiEvent.description || '',
+      start: apiEvent.EventStartDate || apiEvent.start,
+      end: apiEvent.EventEndDate || apiEvent.end,
+      address: apiEvent.VenueAddress || apiEvent.venue?.name || apiEvent.location || '',
       featuredImage: apiEvent.featured_image || '',
+      largeImage: apiEvent.LargeImage || '',
       slug: {
-        current: generateSlug(apiEvent.name || 'untitled-event'),
+        current: generateSlug(apiEvent.EventName || apiEvent.name || 'untitled-event'),
         _type: 'slug'
       },
       ...(apiEvent.age_limit && { age: apiEvent.age_limit }),
+      ...(apiEvent.EventWebsite && { ticketUrl: apiEvent.EventWebsite }),
       ...(apiEvent.ticket_url && { ticketUrl: apiEvent.ticket_url }),
-      buttonText: apiEvent.button_text || 'View in app',
+      buttonText: apiEvent.button_text || 'Book Now',
     };
 
     const result = await createOrUpdateEvent(eventData);

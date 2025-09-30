@@ -30,6 +30,12 @@ export default {
             description: "Default image for this event",
           },
           {
+            title: "Large Image",
+            name: "largeImage",
+            type: "string",
+            description: "Large image URL from API (if available). This will be used in preference to the featured image when available.",
+          },
+          {
             title: "External ID",
             name: "externalId",
             type: "string",

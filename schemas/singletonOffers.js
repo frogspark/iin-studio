@@ -52,6 +52,12 @@ export default {
       initialValue: true,
     },
     {
+      title: "Ticket URL",
+      name: "ticketUrl",
+      type: "url",
+      description: "Deep-link URL to the app (e.g., https://nottingham.loqiva.com/public/service/redirect?type=offer&id=12345)",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",

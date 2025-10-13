@@ -105,9 +105,8 @@ export default {
     {
       title: "Ticket URL",
       name: "ticketUrl",
-      type: "string",
-      description: "Add the ticket URL",
-      validation: (Rule) => Rule.required(),
+      type: "url",
+      description: "Deep-link URL to the app (e.g., https://nottingham.loqiva.com/public/service/redirect?type=event&id=20679&isGeo=false)",
     },
    {
       title: "Show on carousel",

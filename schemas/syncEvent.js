@@ -120,7 +120,7 @@ export default {
             name: "ticketUrl",
             type: "string",
             description: "Add the ticket URL",
-            validation: (Rule) => Rule.required(),
+         
           },
           {
             name: "slug",

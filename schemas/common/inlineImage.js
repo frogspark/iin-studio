@@ -68,12 +68,11 @@ export default {
   preview: {
     select: {
       image: 'image',
-      caption: 'image',
     },
-    prepare ({ title, image }) {
+    prepare ({ image }) {
       return {
         title: 'Inline Image',
-        subtitle: image.caption,
+        subtitle: image?.caption || '',
         media: image
       }
     }
